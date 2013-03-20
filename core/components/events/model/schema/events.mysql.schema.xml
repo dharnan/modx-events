@@ -1,0 +1,17 @@
+<?xml version="2.0" encoding="UTF-8"?>
+<model package="events" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
+    <object class="Event" table="events" extends="xPDOSimpleObject">
+        <field key="id" dbtype="int" precision="10" phptype="integer" null="false" index="pk" generated="native"/>
+        <field key="subtype" dbtype="varchar" precision="255" phptype="string" null="true"/>
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="true"/>
+        <field key="date" dbtype="date" phptype="string" null="true"/>
+        <field key="time" dbtype="time" phptype="string" null="true"/>
+        <field key="description" dbtype="text" phptype="string" null="true"/>
+        <field key="published" dbtype="tinyint" precision="1" phptype="int" null="false" default="0"/>
+        <field key="datetime_created" dbtype="timestamp" phptype="string" null="true" />
+        <field key="datetime_modified" dbtype="timestamp" phptype="string" null="false" default="CURRENT_TIMESTAMP"/>
+        <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
+            <column key="id" collation="A" null="false"/>
+        </index>
+    </object>
+</model>
